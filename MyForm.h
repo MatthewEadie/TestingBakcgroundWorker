@@ -112,9 +112,9 @@ namespace TestingBakcgroundWorker {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(24, 156);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(35, 13);
+			this->label2->Size = System::Drawing::Size(39, 13);
 			this->label2->TabIndex = 4;
-			this->label2->Text = L"label2";
+			this->label2->Text = L"Label2";
 			// 
 			// MyForm
 			// 
@@ -128,11 +128,17 @@ namespace TestingBakcgroundWorker {
 			this->Controls->Add(this->btnProcess);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
+	{
+		label->Text = "";
+		label2->Text = "";
+	}
 	private: System::Void backgroundWorker1_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e) 	
 	{
 		int sum = 0;
@@ -199,5 +205,6 @@ namespace TestingBakcgroundWorker {
 		}
 		
 	}
+
 };
 }

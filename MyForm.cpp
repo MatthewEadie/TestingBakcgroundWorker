@@ -1,8 +1,14 @@
 #include "MyForm.h"
 
-using namespace TestingBakcgroundWorker;
+using namespace System;
+using namespace System::Windows::Forms;
 
-void main()
+[STAThread]
+void main(array<String^>^ args)
 {
-	Application::Run(gcnew MyForm());
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(false);
+	Application::VisualStyleState;
+	TestingBakcgroundWorker::MyForm form;
+	Application::Run(% form);
 }
